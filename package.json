@@ -1,7 +1,7 @@
 {
   "name": "curl",
   "version": "0.1.0",
-  "main": "curl/get",
+  "main": "curl/src/get.js",
   "dependencies": {
     "q":"0.9",
     "request":"2.31.0"
