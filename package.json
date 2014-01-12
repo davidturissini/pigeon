@@ -1,5 +1,5 @@
 {
-  "name": "soundcloudjs",
+  "name": "curljs",
   "version": "0.1.0",
   "devDependencies": {
     "q":"0.9",
