@@ -1,5 +1,5 @@
 {
-  "name": "curljs",
+  "name": "curl",
   "version": "0.1.0",
   "devDependencies": {
     "q":"0.9",
