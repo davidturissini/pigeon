@@ -1,0 +1,1 @@
+exports.get = require('./server/fetch').fetch;
