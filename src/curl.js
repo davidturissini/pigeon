@@ -1,1 +1,1 @@
-exports.get = require('./resource/fetch').fetch;
+exports.curl = require('./resource/fetch').fetch;
