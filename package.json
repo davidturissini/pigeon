@@ -1,0 +1,8 @@
+{
+  "name": "soundcloudjs",
+  "version": "0.1.0",
+  "devDependencies": {
+    "q":"0.9",
+    "request":"2.31.0"
+  }
+}
