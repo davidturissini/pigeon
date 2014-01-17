@@ -2,18 +2,19 @@ var Q = require('q');
 var jQuery = require('jQuery');
 
 
-function browserFetch (defer, path) {
+function browserFetch (defer, path, params) {
 
 	jQuery.ajax({
 		url:path,
-		dataType:'text'
+		dataType:'text',
+		data:params || {}
 	})
 
 	.then(defer.resolve.bind(defer));
 }
 
 
-exports.fetch = function (path) {
+exports.fetch = function (path, params) {
 	var defer = Q.defer();
 
     browserFetch(defer, path);
