@@ -1,5 +1,5 @@
 var Q = require('q');
-var jQuery = require('jQuery');
+var jQuery = require('jquery');
 
 
 function browserFetch (defer, path, params) {
