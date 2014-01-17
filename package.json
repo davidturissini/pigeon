@@ -1,7 +1,7 @@
 {
-  "name": "curl",
+  "name": "pigeon",
   "version": "0.1.0",
-  "main": "./src/curl.js",
+  "main": "./src/pigeon.js",
   "dependencies": {
     "q":"0.9",
     "request":"2.31.0"
