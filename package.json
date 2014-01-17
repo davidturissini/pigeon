@@ -4,6 +4,7 @@
   "main": "./src/pigeon.js",
   "dependencies": {
     "q":"0.9",
-    "request":"2.31.0"
+    "request":"2.31.0",
+    "jquery":"x.x.x"
   }
 }
