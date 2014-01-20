@@ -2,10 +2,7 @@ var Q = require('q');
 var fs = require('fs');
 
 function nodeJSFetch (defer, path) {
-	var baseDir = './public';
-
-
-	var fileContents = fs.readFile(baseDir + path, 'utf-8', function (err, data) {
+	var fileContents = fs.readFile(path, 'utf-8', function (err, data) {
 		if (err) {
 			defer.reject();
 		} else {
