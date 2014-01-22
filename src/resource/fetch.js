@@ -1,5 +1,5 @@
-if (module && module.exports) {
-	exports.fetch = require('./server/fetch').fetch;
+if (process.browser !== true) {
+	module.exports = require('./server/fetch');
 } else {
-	exports.fetch = require('./browser/browserfetch').fecth;
+	module.exports = require('./browser/browserfetch');
 }

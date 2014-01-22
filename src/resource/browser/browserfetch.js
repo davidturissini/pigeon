@@ -1,4 +1,5 @@
-var ajax = require('ajax');
+var ajax = require('component-ajax');
+var Q = require('q');
 
 
 function browserFetch (path, params) {
@@ -10,4 +11,17 @@ function browserFetch (path, params) {
 }
 
 
-exports.fetch = browserFetch;
+exports.fetch = function (path, params) {
+	var defer = Q.defer();
+
+	ajax(path, {
+		dataType:'text',
+		data:params || {},
+		success: function (e) {
+			defer.resolve(e);
+		}
+	});
+
+	return defer.promise;
+
+}
