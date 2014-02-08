@@ -9,7 +9,7 @@ exports.fetch = function (path, params) {
 	var url = path + '?' + querystring.stringify(params);
 
 
-	request(path, function (err, data) {
+	request(url, function (err, data) {
 		defer.resolve(data.body, data);
 	});
 
