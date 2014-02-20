@@ -1,3 +1,6 @@
+var resourceFetch = require('./resource/fetch');
+
 module.exports = {
-	get:require('./resource/fetch').fetch
+	get:resourceFetch.fetch,
+	post:resourceFetch.post
 }

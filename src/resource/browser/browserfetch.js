@@ -16,3 +16,19 @@ exports.fetch = function (path, params) {
 	return defer.promise;
 
 }
+
+exports.post = function (path, params) {
+	var defer = Q.defer();
+
+	ajax({
+		type:'post',
+		url:path,
+		dataType:'text',
+		data:params || {},
+		success: function (e) {
+			defer.resolve(e);
+		}
+	});
+
+	return defer.promise;
+}
