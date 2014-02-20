@@ -10,7 +10,11 @@ exports.fetch = function (path, params) {
 
 
 	request(url, function (err, data) {
-		defer.resolve(data.body, data);
+		if (err) {
+			defer.reject(err);
+		} else {
+			defer.resolve(data.body, data);
+		}
 	});
 
 	return defer.promise;
