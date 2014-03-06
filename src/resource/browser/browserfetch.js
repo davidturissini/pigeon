@@ -17,6 +17,22 @@ exports.fetch = function (path, params) {
 
 }
 
+exports.del = function (path, params) {
+	var defer = Q.defer();
+
+	ajax({
+		type:'delete',
+		url:path,
+		dataType:'text',
+		data:params || {},
+		success: function (e) {
+			defer.resolve(e);
+		}
+	});
+
+	return defer.promise;
+}
+
 exports.post = function (path, params) {
 	var defer = Q.defer();
 
