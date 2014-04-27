@@ -10,6 +10,9 @@ exports.fetch = function (path, params) {
 		data:params || {},
 		success: function (e) {
 			defer.resolve(e);
+		},
+		error: function (e) {
+			defer.reject(e);
 		}
 	});
 
