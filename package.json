@@ -5,6 +5,7 @@
   "dependencies": {
     "q":"0.9",
     "request":"2.33.0",
-   	"component-ajax": "0.0.2"
+   	"component-ajax": "0.0.2",
+   	"lodash": "~2.4.1"
   }
 }
