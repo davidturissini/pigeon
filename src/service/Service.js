@@ -38,7 +38,7 @@ proto.buildUrl = function (path) {
 
 proto.request = function (path, params) {
 	var url = this.buildUrl(path);
-	return resourceFetch.fetch(url, _.extend({}, defaultParams, params))
+	return resourceFetch.fetch(url, _.extend({}, this.defaultParams, params))
 		.then(this.parse, this.error);
 };
 
