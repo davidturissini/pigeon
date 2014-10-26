@@ -24,6 +24,13 @@ proto.protocol = 'http';
 proto.basePath = '/';
 proto.domain = null;
 proto.defaultParams = {};
+proto.parse = function (e) {
+	return JSON.parse(e);
+};
+
+proto.error = function (e) {
+	throw new Error();
+};
 
 proto.buildUrl = function (path) {
 	return this.protocol + '://' + this.domain + this.basePath + '/' + path;
@@ -31,15 +38,36 @@ proto.buildUrl = function (path) {
 
 proto.request = function (path, params) {
 	var url = this.buildUrl(path);
-	return resourceFetch.fetch(url, _.extend({}, defaultParams, params));
+	return resourceFetch.fetch(url, _.extend({}, defaultParams, params))
+		.then(this.parse, this.error);
 };
 
 proto.get = function (path, params) {
-	var url = this.buildUrl(path);
-	return resourceFetch.fetch(url, _.extend({}, defaultParams, params));
-		.then(function (e) {
-			return JSON.parse(e);
-		});
+	return this.request(path, params);
+};
+
+proto.post = function (path, params) {
+	params = params || {};
+	params.type = 'post';
+	return this.request(path, params);
+};
+
+proto.delete = function (path, params) {
+	params = params || {};
+	params.type = 'delete';
+	return this.request(path, params);
+};
+
+proto.put = function (path, params) {
+	params = params || {};
+	params.type = 'put';
+	return this.request(path, params);
+};
+
+proto.head = function (path, params) {
+	params = params || {};
+	params.type = 'head';
+	return this.request(path, params);
 };
 
 
